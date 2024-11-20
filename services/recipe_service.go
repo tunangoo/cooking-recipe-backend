@@ -19,3 +19,11 @@ func GetRecipe(id int) (*models.Recipe, error) {
 	}
 	return recipe, err
 }
+
+func SearchRecipes(query string) ([]*models.Recipe, error) {
+	recipes, err := models.Search(query)
+	if err != nil {
+		return nil, err
+	}
+	return recipes, err
+}

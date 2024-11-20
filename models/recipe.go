@@ -21,3 +21,17 @@ func GetAll() ([]*Recipe, error) {
 	err := DB.Preload("Ingredients").Find(&recipes).Error
 	return recipes, err
 }
+
+func Search(query string) ([]*Recipe, error) {
+	var recipes []*Recipe
+	err := DB.Preload("Ingredients").
+		Joins("JOIN ingredients ON ingredients.recipe_id = recipes.id").
+		Where("recipes.name LIKE ? OR recipes.cuisine LIKE ? OR ingredients.name LIKE ?",
+			"%"+query+"%", "%"+query+"%", "%"+query+"%").
+		Distinct().
+		Find(&recipes).Error
+	if err != nil {
+		return nil, err
+	}
+	return recipes, nil
+}

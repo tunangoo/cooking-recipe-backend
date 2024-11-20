@@ -10,5 +10,6 @@ func RegisterRoutes(r *gin.Engine) {
 	{
 		recipeRoutes.GET("/all", controllers.GetAll)
 		recipeRoutes.GET("/:id", controllers.GetRecipe)
+		recipeRoutes.GET("/search", controllers.SearchRecipes)
 	}
 }
