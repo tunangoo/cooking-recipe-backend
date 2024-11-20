@@ -4,10 +4,18 @@ import (
 	"cooking-recipe-backend/models"
 )
 
-func GetAllRecipes() ([]models.Recipe, error) {
-	var recipes []models.Recipe
-	if err := models.DB.Find(&recipes).Error; err != nil {
+func GetAll() ([]*models.Recipe, error) {
+	recipes, err := models.GetAll()
+	if err != nil {
 		return nil, err
 	}
-	return recipes, nil
+	return recipes, err
+}
+
+func GetRecipe(id int) (*models.Recipe, error) {
+	recipe, err := models.GetRecipe(id)
+	if err != nil {
+		return nil, err
+	}
+	return recipe, err
 }

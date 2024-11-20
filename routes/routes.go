@@ -8,6 +8,7 @@ import (
 func RegisterRoutes(r *gin.Engine) {
 	recipeRoutes := r.Group("/recipe")
 	{
-		recipeRoutes.GET("/", controllers.GetRecipes)
+		recipeRoutes.GET("/all", controllers.GetAll)
+		recipeRoutes.GET("/:id", controllers.GetRecipe)
 	}
 }
