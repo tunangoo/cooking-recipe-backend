@@ -2,7 +2,7 @@ package main
 
 import (
 	"cooking-recipe-backend/config"
-	"cooking-recipe-backend/database"
+	"cooking-recipe-backend/models"
 	"cooking-recipe-backend/routes"
 	"github.com/gin-gonic/gin"
 )
@@ -12,7 +12,7 @@ func main() {
 	config.LoadEnv()
 
 	// Connect to database
-	database.ConnectDatabase()
+	models.ConnectDatabase()
 
 	// Setup Gin
 	r := gin.Default()
