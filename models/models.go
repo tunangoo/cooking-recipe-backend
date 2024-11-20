@@ -31,7 +31,7 @@ func ConnectDatabase() {
 	}
 	DB = database
 
-	DB.AutoMigrate(&Recipe{})
+	DB.AutoMigrate(&Recipe{}, &Ingredient{})
 
 }
 
