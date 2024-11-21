@@ -6,7 +6,7 @@ import (
 )
 
 func RegisterRoutes(r *gin.Engine) {
-	recipeRoutes := r.Group("/recipe")
+	recipeRoutes := r.Group("/api/recipe")
 	{
 		recipeRoutes.GET("/all", controllers.GetAll)
 		recipeRoutes.GET("/:id", controllers.GetRecipe)
