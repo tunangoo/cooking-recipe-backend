@@ -18,7 +18,7 @@ We are looking to build a simple cooking recipe web application where users can 
 - **Description**: Retrieves a list of all recipes.
 - **Usage**: This endpoint returns a complete list of recipes stored in the database.
 - **Example Request**:
-    - GET https://cooking-recipe-backend.onrender.com/api/recipes/all
+    - GET https://cooking-recipe-backend.onrender.com/api/recipe/all
 - **Response**: Returns an array of all recipes.
 
 ## 2. **GET /api/recipe/{id}**
